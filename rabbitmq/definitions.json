@@ -1,17 +1,11 @@
 {
-  "users": [
-    {
-      "name": "barmi",
-      "password": "barmi1234",
-      "tags": "administrator"
-    }
-  ],
+  "users": [],
   "vhosts": [
     { "name": "/barmi" }
   ],
   "permissions": [
     {
-      "user": "barmi",
+      "user": "${RABBITMQ_USER}",
       "vhost": "/barmi",
       "configure": ".*",
       "write": ".*",
@@ -64,3 +58,4 @@
     }
   ]
 }
+
