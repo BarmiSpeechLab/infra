@@ -32,7 +32,21 @@
       "arguments": {}
     },
     {
-      "name": "ai.results",
+      "name": "pron_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "inton_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "llm_result",
       "vhost": "/barmi",
       "durable": true,
       "auto_delete": false,
@@ -51,11 +65,26 @@
     {
       "source": "ai.exchange",
       "vhost": "/barmi",
-      "destination": "ai.results",
+      "destination": "pron_result",
       "destination_type": "queue",
-      "routing_key": "ai.result",
+      "routing_key": "pron_result",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "inton_result",
+      "destination_type": "queue",
+      "routing_key": "inton_result",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "llm_result",
+      "destination_type": "queue",
+      "routing_key": "llm_result",
       "arguments": {}
     }
   ]
 }
-
