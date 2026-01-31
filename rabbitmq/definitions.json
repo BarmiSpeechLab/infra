@@ -1,7 +1,9 @@
 {
   "users": [],
   "vhosts": [
-    { "name": "/barmi" }
+    {
+      "name": "/barmi"
+    }
   ],
   "permissions": [
     {
@@ -51,6 +53,13 @@
       "durable": true,
       "auto_delete": false,
       "arguments": {}
+    },
+    {
+      "name": "error_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
     }
   ],
   "bindings": [
@@ -84,6 +93,14 @@
       "destination": "llm_result",
       "destination_type": "queue",
       "routing_key": "llm_result",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "error_result",
+      "destination_type": "queue",
+      "routing_key": "error_result",
       "arguments": {}
     }
   ]
