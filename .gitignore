@@ -41,3 +41,9 @@ checkpoints/
 # Misc
 .cache/
 coverage/
+
+
+# Jenkins home (contains secrets, plugins, jobs)
+infra/jenkins/jenkins_home/
+**/jenkins_home/
+**/jenkins_home/**
