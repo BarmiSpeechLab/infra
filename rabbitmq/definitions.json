@@ -34,6 +34,13 @@
       "arguments": {}
     },
     {
+      "name": "conversation.jobs",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
       "name": "pron_result",
       "vhost": "/barmi",
       "durable": true,
@@ -55,7 +62,7 @@
       "arguments": {}
     },
     {
-      "name": "error_result",
+      "name": "conversation_result",
       "vhost": "/barmi",
       "durable": true,
       "auto_delete": false,
@@ -69,6 +76,14 @@
       "destination": "ai.jobs",
       "destination_type": "queue",
       "routing_key": "ai.job",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "conversation.jobs",
+      "destination_type": "queue",
+      "routing_key": "conversation.job",
       "arguments": {}
     },
     {
@@ -98,9 +113,9 @@
     {
       "source": "ai.exchange",
       "vhost": "/barmi",
-      "destination": "error_result",
+      "destination": "conversation_result",
       "destination_type": "queue",
-      "routing_key": "error_result",
+      "routing_key": "conversation_result",
       "arguments": {}
     }
   ]
