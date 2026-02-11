@@ -1,0 +1,137 @@
+{
+  "users": [],
+  "vhosts": [
+    {
+      "name": "/barmi"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "${RABBITMQ_USER}",
+      "vhost": "/barmi",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "ai.exchange",
+      "vhost": "/barmi",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "queues": [
+    {
+      "name": "ai.jobs",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "conversation.jobs",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "pron_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "inton_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "llm_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "error_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "conversation_result",
+      "vhost": "/barmi",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "ai.jobs",
+      "destination_type": "queue",
+      "routing_key": "ai.job",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "conversation.jobs",
+      "destination_type": "queue",
+      "routing_key": "conversation.job",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "pron_result",
+      "destination_type": "queue",
+      "routing_key": "pron_result",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "inton_result",
+      "destination_type": "queue",
+      "routing_key": "inton_result",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "llm_result",
+      "destination_type": "queue",
+      "routing_key": "llm_result",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "error_result",
+      "destination_type": "queue",
+      "routing_key": "error_result",
+      "arguments": {}
+    },
+    {
+      "source": "ai.exchange",
+      "vhost": "/barmi",
+      "destination": "conversation_result",
+      "destination_type": "queue",
+      "routing_key": "conversation_result",
+      "arguments": {}
+    }
+  ]
+}
