@@ -8,6 +8,12 @@
     - OpenVidu WebSocket(`5443` → `openvidu-dev:5443`)
 - RabbitMQ: 메시지 브로커 환경입니다.
 
+## 🔗 기술 개발 문서
+- [RabbitMQ란 무엇인가요?](https://www.notion.so/RabbitMQ-2f4fc74069a680e1b7fedc75387541c7?source=copy_link)
+- [RabbitMQ 기술 설계](https://www.notion.so/RabbitMQ-2f4fc74069a68006a3e7d84af7388e2e?source=copy_link)
+- [Nginx에 대하여](https://www.notion.so/Nginx-2f7fc74069a680048dcde22b080339f9?source=copy_link)
+- [WebRTC Openvidu 배포 환경 이슈 해결](https://www.notion.so/WebRTC-Openvidu-2fefc74069a68060a121e2f73fcd3ef2?source=copy_link)
+
 ## 📁 디렉토리 구조
 
 ```
@@ -20,9 +26,3 @@ infra/
     ├── rabbitmq.conf     # RabbitMQ 기본 설정
     └── definitions.json  # vhost/권한/익스체인지/큐 정의
 ```
-
-## 🔗 기술 개발 문서
-- [RabbitMQ란 무엇인가요?](https://www.notion.so/RabbitMQ-2f4fc74069a680e1b7fedc75387541c7?source=copy_link)
-- [RabbitMQ 기술 설계](https://www.notion.so/RabbitMQ-2f4fc74069a68006a3e7d84af7388e2e?source=copy_link)
-- [Nginx에 대하여](https://www.notion.so/Nginx-2f7fc74069a680048dcde22b080339f9?source=copy_link)
-- [WebRTC Openvidu 배포 환경 이슈 해결](https://www.notion.so/WebRTC-Openvidu-2fefc74069a68060a121e2f73fcd3ef2?source=copy_link)
